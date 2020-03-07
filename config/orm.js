@@ -23,7 +23,7 @@ function objToSql(ob) {
 }
 
 let orm = {
-	all : function(tableInput, cd) {
+	all : function(tableInput, cb) {
 		let queryString = 'SELECT * FROM ' + tableInput + ';';
 		connection.query(queryString, (err, result) => {
 			if (err) {
@@ -34,8 +34,8 @@ let orm = {
 	}
 };
 
-selectAll();
-insertOne();
-updateOne();
+// selectAll();
+// insertOne();
+// updateOne();
 
 module.exports = orm;
