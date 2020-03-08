@@ -6,11 +6,21 @@ const burger = require('../models/burger');
 router.get('/', (req, res) => {
 	burger.all(function(data) {
 		let burgerObject = {
-			burger : data
+			burgers : data
 		};
 		console.log(burgerObject);
 		res.render('index', burgerObject);
 	});
+});
+
+router.post('/api/burgers', (req, res) => {
+	burger.create(
+		[ 'burger_name', 'devoured' ],
+		[ req.body.name, req.body.devoured ],
+		function(result) {
+			res.json({ id: result.insertId });
+		}
+	);
 });
 
 // post new information to the database

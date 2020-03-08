@@ -1,7 +1,7 @@
 INSERT INTO burgers
-    (burger_name)
+    (burger_name, devoured)
 VALUES
-    ('veggie');
+    ('veggie', true);
 INSERT INTO burgers
     (burger_name)
 VALUES
@@ -10,3 +10,5 @@ INSERT INTO burgers
     (burger_name)
 VALUES
     ('pineapple');
+    
+    
