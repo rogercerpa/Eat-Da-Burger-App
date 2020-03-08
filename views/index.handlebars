@@ -5,15 +5,23 @@
 
 <img src="/assets/img/burger.gif" alt="Beyond-Burger" style="width:200px;height:200px; border-radius:10px;">
 
-<h2>These are all the Burger that I will eat one day:</h2>
+<h2>These are all the Burger that I will DEVOUR one day:</h2>
 
 <ul>
-  
-
+    {{#each burgers}}
+        {{#unless devoured}}
+            {{> burgers/burger-block devoured=true}}
+        {{/unless}}
+    {{/each}}
 </ul>
 
-<h2>These are all the Burgers that I have eaten and were delicious!!!</h2>
+<h2>These are all the Burgers that I have DEVOURED and were delicious!!!</h2>
 <ul>
+    {{#each burgers}}
+        {{#if devoured}}
+            {{> burgers/burger-block devoured=false}}
+        {{/if}}
+    {{/each}}
 
 </ul>
 
